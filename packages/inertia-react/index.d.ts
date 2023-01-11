@@ -1,6 +1,8 @@
 import * as Inertia from '@inertiajs/inertia'
 import * as React from 'react'
 
+export const PageContext: React.Context<unknown>;;
+
 type App<
   PagePropsBeforeTransform extends Inertia.PagePropsBeforeTransform = Inertia.PagePropsBeforeTransform,
   PageProps extends Inertia.PageProps = Inertia.PageProps
@@ -63,6 +65,8 @@ export const InertiaApp: App
 type setDataByObject<TForm> = (data: TForm) => void
 type setDataByMethod<TForm> = (data: (previousData: TForm) => TForm) => void
 type setDataByKeyValuePair<TForm> = <K extends keyof TForm>(key: K, value: TForm[K]) => void
+
+
 
 export interface InertiaFormProps<TForm = Record<string, any>> {
 	data: TForm
